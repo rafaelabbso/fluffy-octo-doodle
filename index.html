@@ -14,13 +14,9 @@
     font-family:Segoe UI, Arial, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     background:
-    radial-gradient(circle at top,#0f2c6e 0%,#061127 40%,#020617 70%,#000000 100%);
+    radial-gradient(circle at top,#123a8c 0%,#061127 40%,#020617 70%,#000000 100%);
     color:white;
     overflow-x:hidden;
 }
@@ -29,7 +25,7 @@ header{
     position:fixed;
     top:0;
     width:100%;
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(10px);
     background:rgba(0,0,0,0.25);
     border-bottom:1px solid rgba(56,189,248,.15);
     z-index:1000;
@@ -47,22 +43,17 @@ header{
 .logo{
     font-size:28px;
     font-weight:700;
-    letter-spacing:2px;
     color:#7dd3fc;
+    letter-spacing:2px;
 }
 
-.logo span{
-    color:white;
-}
-
-.nav-links a{
-    text-decoration:none;
+.nav a{
     color:#cbd5e1;
-    margin-left:25px;
-    transition:.3s;
+    text-decoration:none;
+    margin-left:20px;
 }
 
-.nav-links a:hover{
+.nav a:hover{
     color:#38bdf8;
 }
 
@@ -74,7 +65,7 @@ header{
     padding:120px 20px 60px;
 }
 
-.hero-container{
+.hero-content{
     max-width:1200px;
     width:100%;
     display:grid;
@@ -90,16 +81,15 @@ header{
     border-radius:999px;
     color:#7dd3fc;
     margin-bottom:25px;
-    background:rgba(56,189,248,.08);
 }
 
-.hero h1{
+h1{
     font-size:72px;
     line-height:1.05;
     margin-bottom:25px;
 }
 
-.hero h1 span{
+h1 span{
     color:#38bdf8;
     text-shadow:0 0 20px #38bdf8;
 }
@@ -114,21 +104,15 @@ header{
 .btn{
     display:inline-block;
     padding:14px 24px;
-    text-decoration:none;
     border-radius:12px;
+    text-decoration:none;
     font-weight:bold;
     margin-right:12px;
-    transition:.3s;
 }
 
 .btn-primary{
     background:#38bdf8;
     color:#02111f;
-    box-shadow:0 0 25px rgba(56,189,248,.5);
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
 }
 
 .btn-secondary{
@@ -136,36 +120,35 @@ header{
     color:white;
 }
 
-.planet{
+.orbit{
     width:420px;
     height:420px;
     margin:auto;
     border-radius:50%;
+    border:1px solid rgba(125,211,252,.3);
     position:relative;
-    border:1px solid rgba(125,211,252,.25);
-    box-shadow:0 0 60px rgba(56,189,248,.2);
 }
 
-.planet::before{
+.orbit:before{
     content:"";
     position:absolute;
-    inset:55px;
+    inset:50px;
     border-radius:50%;
-    border:2px dashed rgba(125,211,252,.45);
-    animation:rotate 16s linear infinite;
+    border:2px dashed rgba(125,211,252,.5);
+    animation:spin 16s linear infinite;
 }
 
-.planet::after{
+.orbit:after{
     content:"LEO";
     position:absolute;
     inset:125px;
     border-radius:50%;
     display:flex;
-    justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#38bdf8,#1d4ed8);
+    justify-content:center;
     font-size:48px;
     font-weight:bold;
+    background:linear-gradient(135deg,#38bdf8,#1d4ed8);
     box-shadow:0 0 35px #38bdf8;
 }
 
@@ -225,35 +208,35 @@ footer{
     border-top:1px solid rgba(56,189,248,.15);
 }
 
-.footer-email{
+.email{
     color:#7dd3fc;
-    font-size:18px;
     margin-bottom:15px;
+    font-size:18px;
 }
 
-.footer-copy{
+.copy{
     color:#94a3b8;
 }
 
-.footer-slogan{
+.slogan{
     margin-top:10px;
     color:#64748b;
     font-size:13px;
 }
 
-@keyframes rotate{
+@keyframes spin{
     from{transform:rotate(0deg);}
     to{transform:rotate(360deg);}
 }
 
 @media(max-width:900px){
 
-.hero-container{
+.hero-content{
     grid-template-columns:1fr;
     text-align:center;
 }
 
-.hero h1{
+h1{
     font-size:50px;
 }
 
@@ -261,7 +244,7 @@ footer{
     grid-template-columns:1fr;
 }
 
-.planet{
+.orbit{
     width:300px;
     height:300px;
 }
@@ -277,10 +260,9 @@ footer{
 
 <header>
 <div class="nav">
-<div class="logo">Sky<span>Link</span></div>
+<div class="logo">SkyLink</div>
 
 <div class="nav-links">
-<a href="#network">Network</a>
 <a href="#technology">Technology</a>
 <a href="#mission">Mission</a>
 <a href="#contact">Contact</a>
@@ -290,25 +272,22 @@ footer{
 
 <section class="hero">
 
-<div class="hero-container">
+<div class="hero-content">
 
 <div>
 <div class="badge">SkyLink LEO Networks</div>
 
-<h1>
-Internet
-<span>Everywhere</span>
-</h1>
+<h1>Internet <span>Everywhere</span></h1>
 
 <p>
-SkyLink LEO Networks is building the next generation global connectivity platform using low-earth-orbit satellites, intelligent routing and high-performance infrastructure.
+SkyLink LEO Networks is building the next generation of global connectivity using low Earth orbit satellites and intelligent network technologies.
 </p>
 
-<a href="#mission" class="btn btn-primary">Discover SkyLink</a>
-<a href="#contact" class="btn btn-secondary">Contact Us</a>
+<a href="#mission" class="btn btn-primary">Discover</a>
+<a href="#contact" class="btn btn-secondary">Contact</a>
 </div>
 
-<div class="planet"></div>
+<div class="orbit"></div>
 
 </div>
 
@@ -324,23 +303,17 @@ SkyLink LEO Networks is building the next generation global connectivity platfor
 
 <div class="card">
 <h3>Global Coverage</h3>
-<p>
-Connect remote villages, ships, aircraft and isolated regions through a worldwide satellite constellation.
-</p>
+<p>Connect remote regions, aircraft, ships and communities worldwide.</p>
 </div>
 
 <div class="card">
 <h3>Low Latency</h3>
-<p>
-LEO satellites provide significantly lower latency than traditional geostationary systems.
-</p>
+<p>Fast response times thanks to our LEO satellite architecture.</p>
 </div>
 
 <div class="card">
-<h3>Smart Network</h3>
-<p>
-AI-assisted traffic management ensures optimal routing and maximum reliability.
-</p>
+<h3>Smart Routing</h3>
+<p>AI-assisted network optimization for maximum performance.</p>
 </div>
 
 </div>
@@ -356,8 +329,7 @@ AI-assisted traffic management ensures optimal routing and maximum reliability.
 <h2 class="section-title">Our Mission</h2>
 
 <p>
-We believe internet access should be available to everyone, everywhere.
-SkyLink aims to remove connectivity barriers and create a truly connected planet.
+Connecting every human, everywhere. We believe access to the internet should be universal and available across the entire planet.
 </p>
 
 </div>
@@ -366,15 +338,15 @@ SkyLink aims to remove connectivity barriers and create a truly connected planet
 
 <footer id="contact">
 
-<div class="footer-email">
+<div class="email">
 skylink.leo.networks@gmail.com
 </div>
 
-<div class="footer-copy">
+<div class="copy">
 © 2026 SkyLink LEO Networks. All rights reserved.
 </div>
 
-<div class="footer-slogan">
+<div class="slogan">
 Connecting Every Human, Everywhere.
 </div>
 
